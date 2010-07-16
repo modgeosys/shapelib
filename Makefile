@@ -118,7 +118,7 @@ lib:
 	rm -fr .libs/libshp.la .libs/libshp.* .libs/libshp.*
 	rm -fr .libs/libshp.lax
 	mkdir .libs/libshp.lax
-	/usr/bin/ld  -dylib -o .libs/libshp.$(OUTTYPE).$(LIBSHP_VERSION)  shpopen.lo shptree.lo dbfopen.lo  -lc
+	/usr/bin/gcc  -dynamiclib -o .libs/libshp.$(OUTTYPE).$(LIBSHP_VERSION)  shpopen.lo shptree.lo dbfopen.lo  -lc
 
 	(cd .libs && rm -f libshp.$(OUTTYPE).1 && ln -s libshp.$(OUTTYPE).$(LIBSHP_VERSION) libshp.$(OUTTYPE).1)
 	(cd .libs && rm -f libshp.$(OUTTYPE) && ln -s libshp.$(OUTTYPE).$(LIBSHP_VERSION) libshp.$(OUTTYPE))
